@@ -37,6 +37,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
+
         <div className="flex relative dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4 style={{ zIndex: '100' }}">
             <TooltipComponent content="Settings" positon="Top">
@@ -76,6 +77,7 @@ const App = () => {
           </div>
         </div>
         <div>
+
           <Routes>
             {/* Dashboard Routes */}
             <Route path="/" element={<Ecommerce />} />
@@ -104,6 +106,7 @@ const App = () => {
           </Routes>
         </div>
       </BrowserRouter>
+      
     </div>
   );
 };
