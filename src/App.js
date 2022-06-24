@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { useStateContext } from './contexts/ContextProvider'
 
 // import { Navbar, Footer, Sidebar, ThemeSettings } from './components'
 import Navbar from './components/Navbar'
@@ -33,13 +34,14 @@ import {
 import './App.css';
 
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+  
   return (
     <div>
       <BrowserRouter>
 
         <div className="flex relative dark:bg-main-dark-bg">
-          <div className="fixed right-4 bottom-4 style={{ zIndex: '100' }}">
+          <div className="fixed right-4 bottom-4 style={{ zIndex: '1000' }}">
             <TooltipComponent content="Settings" positon="Top">
               <button
                 type="button"
@@ -49,6 +51,7 @@ const App = () => {
               </button>
             </TooltipComponent>
           </div>
+
           {/* Setup Dynamic Code For Active Menu's Visibility */}
           {activeMenu ? (
             <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
